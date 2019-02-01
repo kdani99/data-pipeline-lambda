@@ -1,0 +1,4 @@
+pymysql==0.9.3
+numpy==1.16.0
+opencv-python==4.0.0.21
+boto3==1.9.86
