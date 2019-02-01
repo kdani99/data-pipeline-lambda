@@ -4,7 +4,10 @@
       "messageId": "19dd0b57-b21e-4ac1-bd88-01bbb068cb78",
       "receiptHandle": "MessageReceiptHandle",
       "body": {
-        "isDev": "True"
+        "imagepath": "avi-dkdev/test_lambda/chip+1.png",
+        "imagemetapath": "avi-dkdev/test_lambda/chip+1.png.meta.json",
+        "imageseglabelpath": "avi-dkdev/test_lambda/chip+1.png.label",
+        "imagesetmetapaht": "avi-dkdev/test_lambda/meta.json"
       },
       "attributes": {
         "ApproximateReceiveCount": "1",
@@ -20,31 +23,31 @@
           "dataType": "String"
         },
         "segmentation_path": {
-          "stringValue": "tony/24993231-c945-4c86-9968-5dbcea6c1dd1/img/photo-1530019878233-2e5fcc1f7ce2.jpeg.label",
+          "stringValue": "tony/b1e2cf07-9072-4528-9116-9f3142e910b1/img/img1.bmp.label",
           "stringListValues": [],
           "binaryListValues": [],
           "dataType": "String"
         },
         "image_name": {
-          "stringValue": "photo-1530019878233-2e5fcc1f7ce2.jpeg",
+          "stringValue": "img1.bmp",
           "stringListValues": [],
           "binaryListValues": [],
           "dataType": "String"
         },
         "set_meta_path": {
-          "stringValue": "tony/24993231-c945-4c86-9968-5dbcea6c1dd1/meta.json",
+          "stringValue": "tony/b1e2cf07-9072-4528-9116-9f3142e910b1/meta.json",
           "stringListValues": [],
           "binaryListValues": [],
           "dataType": "String"
         },
         "image_path": {
-          "stringValue": "tony/24993231-c945-4c86-9968-5dbcea6c1dd1/img/photo-1530019878233-2e5fcc1f7ce2.jpeg",
+          "stringValue": "tony/b1e2cf07-9072-4528-9116-9f3142e910b1/img/img1.bmp",
           "stringListValues": [],
           "binaryListValues": [],
           "dataType": "String"
         },
         "user_name": {
-          "stringValue": "tony_test_sam",
+          "stringValue": "tony",
           "stringListValues": [],
           "binaryListValues": [],
           "dataType": "String"
@@ -68,7 +71,7 @@
           "dataType": "String"
         },
         "meta_path": {
-          "stringValue": "tony/24993231-c945-4c86-9968-5dbcea6c1dd1/img/photo-1530019878233-2e5fcc1f7ce2.jpeg.meta.json",
+          "stringValue": "tony/b1e2cf07-9072-4528-9116-9f3142e910b1/img/img1.bmp.meta.json",
           "stringListValues": [],
           "binaryListValues": [],
           "dataType": "String"

@@ -9,6 +9,9 @@ import time
 
 s3_resource = resource('s3')
 
+BUCKET_NAME = "avi-image-label-npz"
+DB_TABLE_NAME = "metadata"
+
 def lambda_handler(event, context):
     for record in event['Records']:
         bucket_name = record["messageAttributes"]["bucket"]['stringValue']
@@ -47,15 +50,14 @@ def lambda_handler(event, context):
         
         # write npz to s3
         if has_seg_label:
-            ### CHANGE BUCKET NAME BELOW DEPENDING ON DEV/TEST ###
-            npz_bucket = s3_resource.Bucket("avi-image-label-npz-test")
+            npz_bucket = s3_resource.Bucket(BUCKET_NAME)
+
             npz_bucket.upload_file('/tmp/' + image_meta_json["id"] + '.npz', image_meta_json["id"] + '.npz') 
             seg_label_npz_path = 'avi-image-label-npz' + '/' + image_meta_json["id"] + '.npz'
         
         #connect to db
         try:
             conn = pymysql.connect(
-                #### CHANGE TO PRODUCTION TABLE WHEN FINISHED DEVELOPPING ###
             'avi-image-labels-metadata.crn3y3nc2obx.us-east-2.rds.amazonaws.com',
             user='admin',
             password='landingaidata',
@@ -75,7 +77,7 @@ def lambda_handler(event, context):
         #write to db
         try:
             with conn.cursor() as cursor:
-                sql = "INSERT INTO `metadata` (`image_id`,`imageset_name`, `imageset_id`, `user_name`, `upload_time`, `image_label_class`, `has_seg_label`, `seg_label_classes`, `has_bbox_label`, `bbox_label`,`image_path`, `seg_label_npz_path`, `imageset_meta_path`, `image_label_folder_path`, `image_meta_path`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+                sql = "INSERT INTO {} (`image_id`,`imageset_name`, `imageset_id`, `user_name`, `upload_time`, `image_label_class`, `has_seg_label`, `seg_label_classes`, `has_bbox_label`, `bbox_label`,`image_path`, `seg_label_npz_path`, `imageset_meta_path`, `image_label_folder_path`, `image_meta_path`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)".format(DB_TABLE_NAME)
                 cursor.execute(sql, (image_id, imageset_name, imageset_id, user_name, upload_time, image_label_class, has_seg_label, str(defect_map), has_bbox_label, str(bbox_labels), image_path, seg_label_npz_path, imageset_meta_path, seg_label_path, image_meta_path))
             conn.commit()
         finally:

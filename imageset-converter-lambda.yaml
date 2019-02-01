@@ -10,7 +10,7 @@ Resources:
       CodeUri: .
       Description: ''
       MemorySize: 256
-      Timeout: 20
+      Timeout: 30
       Role: >-
         arn:aws:iam::286751717145:role/avi-image-labels-converter-lambda-vpc-role
       Events:
