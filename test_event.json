@@ -1,0 +1,83 @@
+{
+  "Records": [
+    {
+      "messageId": "19dd0b57-b21e-4ac1-bd88-01bbb068cb78",
+      "receiptHandle": "MessageReceiptHandle",
+      "body": {
+        "isDev": "True"
+      },
+      "attributes": {
+        "ApproximateReceiveCount": "1",
+        "SentTimestamp": "1523232000000",
+        "SenderId": "123456789012",
+        "ApproximateFirstReceiveTimestamp": "1523232000001"
+      },
+      "messageAttributes": {
+        "bucket": {
+          "stringValue": "landing-light-upload-internal",
+          "stringListValues": [],
+          "binaryListValues": [],
+          "dataType": "String"
+        },
+        "segmentation_path": {
+          "stringValue": "tony/24993231-c945-4c86-9968-5dbcea6c1dd1/img/photo-1530019878233-2e5fcc1f7ce2.jpeg.label",
+          "stringListValues": [],
+          "binaryListValues": [],
+          "dataType": "String"
+        },
+        "image_name": {
+          "stringValue": "photo-1530019878233-2e5fcc1f7ce2.jpeg",
+          "stringListValues": [],
+          "binaryListValues": [],
+          "dataType": "String"
+        },
+        "set_meta_path": {
+          "stringValue": "tony/24993231-c945-4c86-9968-5dbcea6c1dd1/meta.json",
+          "stringListValues": [],
+          "binaryListValues": [],
+          "dataType": "String"
+        },
+        "image_path": {
+          "stringValue": "tony/24993231-c945-4c86-9968-5dbcea6c1dd1/img/photo-1530019878233-2e5fcc1f7ce2.jpeg",
+          "stringListValues": [],
+          "binaryListValues": [],
+          "dataType": "String"
+        },
+        "user_name": {
+          "stringValue": "tony_test_sam",
+          "stringListValues": [],
+          "binaryListValues": [],
+          "dataType": "String"
+        },
+        "app_agent": {
+          "stringValue": "LandingLight",
+          "stringListValues": [],
+          "binaryListValues": [],
+          "dataType": "String"
+        },
+        "segmentation_count": {
+          "stringValue": "1",
+          "stringListValues": [],
+          "binaryListValues": [],
+          "dataType": "Number"
+        },
+        "region": {
+          "stringValue": "us-east-2",
+          "stringListValues": [],
+          "binaryListValues": [],
+          "dataType": "String"
+        },
+        "meta_path": {
+          "stringValue": "tony/24993231-c945-4c86-9968-5dbcea6c1dd1/img/photo-1530019878233-2e5fcc1f7ce2.jpeg.meta.json",
+          "stringListValues": [],
+          "binaryListValues": [],
+          "dataType": "String"
+        }
+      },
+      "md5OfBody": "7b270e59b47ff90a553787216d55d91d",
+      "eventSource": "aws:sqs",
+      "eventSourceARN": "arn:aws:sqs:us-east-1:123456789012:MyQueue",
+      "awsRegion": "us-east-1"
+    }
+  ]
+}
